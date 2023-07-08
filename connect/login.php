@@ -9,7 +9,6 @@ require_once('connect.php');
     <label for="psw">password</label>
     <input type="text" name="psw" id="psw">
 
-
     <button>Connect</button>
 </form>
 
@@ -23,13 +22,13 @@ $query = $db->prepare($sql);
 $query->execute();
 $users = $query->fetchAll(PDO::FETCH_ASSOC);
 if ($users == true) {
- foreach ($users as $user )
- $_SESSION['id'] = $user['id_users'];
- echo $user['username'].$_SESSION['id'];
+include("./display/msg.php");
 } else {
    echo 'erreur';
 }
 }
+
+
 
 
 
